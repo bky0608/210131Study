@@ -1,4 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import BoxMaker from './box-maker'
 
-ReactDOM.render(<div>React App</div>, document.getElementById('root'))
+ReactDOM.render(<BoxMaker />, document.getElementById('root'))
