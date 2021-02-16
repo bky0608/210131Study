@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Erorr = () => {
-  return <div>Eroorr</div>
-}
+  return <div>Eroorr</div>;
+};
 
-export default Erorr
+export default Erorr;

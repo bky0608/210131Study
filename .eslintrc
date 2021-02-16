@@ -8,7 +8,7 @@
     "standard",
     "react-hooks"
   ],
-  "extends": ["plugin:react/recommended", "plugin:prettier/recommended", "eslint:recommended"],
+  "extends": ["plugin:react/recommended", "plugin:prettier/recommended", "eslint:recommended", "prettier"],
   "settings": {
     "react": {
       "createClass": "createReactClass",
@@ -24,13 +24,22 @@
     "sourceType": "module"
   },
   "env": {
+    "browser": true,
     "es6": true,
     "node": true
   },
   "rules": {
-    "no-console": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "no-console": "off",
+    "react-hooks/rules-of-hooks": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": [
+      "error", {
+        "endOfLine": "auto"
+      }
+    ],
+    "no-unused-vars":"warn",
+    "object-shorthand":"off",
+    "class-methods-use-this":"off"
   },
   "overrides": []
 }

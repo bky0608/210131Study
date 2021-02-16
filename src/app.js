@@ -1,12 +1,12 @@
-import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import ResetCSS from './components/shared/reset-css'
-import Home from './pages/home'
-import MyInfo from './pages/my-info'
-import Signin from './pages/signin'
-import Search from './pages/search'
-import Erorr from './pages/erorr'
+import ResetCSS from './components/shared/reset-css';
+import Home from './pages/home';
+import MyInfo from './pages/my-info';
+import Signin from './pages/signin';
+import Search from './pages/search';
+import Erorr from './pages/erorr';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         </Switch>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
