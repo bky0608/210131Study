@@ -23,8 +23,12 @@ const Search = () => {
   };
 
   const handleRemoveKeyword = (id) => {
-    // Filter
     setKeywords(keywords.filter((keyword) => keyword.id !== id));
+  };
+
+  const handelAllremove = () => {
+    setKeywords([]);
+    localStorage.removeItem('keywords');
   };
 
   return (
@@ -33,6 +37,7 @@ const Search = () => {
       <SearchList
         keywords={keywords} //
         onRemoveKeyword={handleRemoveKeyword}
+        onAllremove={handelAllremove}
       />
     </div>
   );

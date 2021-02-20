@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
@@ -79,6 +79,7 @@ const Input = styled.input`
 
 const SearchBar = ({ onAddKeyword }) => {
   const [keyowrd, setKeyowrd] = useState('');
+  const inputRef = useRef();
 
   const handleKeyword = (e) => {
     setKeyowrd(e.target.value);
@@ -86,12 +87,14 @@ const SearchBar = ({ onAddKeyword }) => {
 
   const handleEnter = (e) => {
     if (e.keyCode === 13) {
+      if (inputRef.current.value === '') return;
       onAddKeyword(keyowrd);
       setKeyowrd('');
     }
   };
 
   const handleClick = () => {
+    if (inputRef.current.value === '') return;
     onAddKeyword(keyowrd);
     setKeyowrd('');
   };
@@ -104,6 +107,7 @@ const SearchBar = ({ onAddKeyword }) => {
           value={keyowrd} //
           onChange={handleKeyword}
           onKeyDown={handleEnter}
+          ref={inputRef}
         />
       </InputContainer>
       <SearchIcon onClick={handleClick} />

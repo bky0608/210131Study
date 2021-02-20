@@ -36,16 +36,20 @@ const Keyword = styled.span`
   font-weight: 400;
 `;
 
-const SearchList = ({ keywords, onRemoveKeyword }) => {
+const SearchList = ({ keywords, onRemoveKeyword, onAllremove }) => {
   if (!keywords.length) {
     return <Container margin="20px">최근 검색어가 없습니다.</Container>;
   }
+
+  const handleAllDelete = () => {
+    onAllremove();
+  };
 
   return (
     <Container padding="18px">
       <Container overflow="hidden">
         <Title color="#666">최근 검색어</Title>
-        <RemoveText>전체삭제</RemoveText>
+        <RemoveText onClick={handleAllDelete}>전체삭제</RemoveText>
       </Container>
 
       <Container margin="10px 0" as="ul">
